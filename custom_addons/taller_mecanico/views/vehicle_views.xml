@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- 1. Vista de Lista (Tabla / Grid) -->
+    <record id="view_taller_vehicle_tree" model="ir.ui.view">
+        <field name="name">taller.vehicle.tree</field>
+        <field name="model">taller.vehicle</field>
+        <field name="arch" type="xml">
+            <tree string="Vehículos">
+                <field name="license_plate" />
+                <field name="brand" />
+                <field name="model" />
+                <field name="partner_id" />
+                <field name="mileage" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- 2. Vista de Formulario (Crear / Editar) -->
+    <record id="view_taller_vehicle_form" model="ir.ui.view">
+        <field name="name">taller.vehicle.form</field>
+        <field name="model">taller.vehicle</field>
+        <field name="arch" type="xml">
+            <form string="Vehículo">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="license_plate" />
+                            <field name="partner_id" />
+                            <field name="brand" />
+                            <field name="model" />
+                        </group>
+                        <group>
+                            <field name="year" />
+                            <field name="color" />
+                            <field name="vin" />
+                            <field name="mileage" />
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Observaciones">
+                            <field name="notes" placeholder="Notas adicionales sobre el vehículo..." />
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- 3. Acción (Controlador que abre las vistas) -->
+    <record id="action_taller_vehicle" model="ir.actions.act_window">
+        <field name="name">Vehículos</field>
+        <field name="res_model">taller.vehicle</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Registra el primer vehículo del taller
+            </p>
+        </field>
+    </record>
+
+    <!-- 4. Menú Principal en la Barra Superior -->
+    <menuitem id="menu_taller_root" name="Taller Mecánico" sequence="20" />
+
+    <!-- Submenú de Vehículos -->
+    <menuitem id="menu_taller_vehicle" name="Vehículos" parent="menu_taller_root"
+        action="action_taller_vehicle" sequence="10" />
+</odoo>

@@ -1,0 +1,26 @@
+{
+    "name": "ERP Taller Mecánico",
+    "version": "17.0.1.0.0",
+    "category": "Services/Services",
+    "summary": "Gestión de vehículos, órdenes de reparación, repuestos, comisiones de mecánicos y rentabilidad.",
+    "author": "Diego Giordano",
+    "depends": [
+        "base",
+        "mail",
+        "stock",
+        "product",
+        "account",
+        "hr",
+    ],
+    "data": [
+        "security/ir.model.access.csv",
+        "data/taller_orden_sequence.xml",
+        "views/vehicle_views.xml",
+        "views/taller_orden_views.xml",
+        "reports/taller_orden_report.xml",
+    ],
+    "installable": True,
+    "application": True,
+    "auto_install": False,
+    "license": "LGPL-3",
+}
