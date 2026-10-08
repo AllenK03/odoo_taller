@@ -1,34 +1,28 @@
-ERP Taller Mecánico (taller_mecanico)
+# ERP Taller Mecánico (taller_mecanico)
+
 Custom module developed on Odoo 17 Community Edition designed for the operational and financial management of the auto repair shop Autosercar, C.A. It manages the complete vehicle repair workflow, from vehicle check-in to PDF report generation and accounting integration.
 
-🚀 Key Features
-Vehicle Management: Unit registration linked to customers, license plate numbers, make, model, year, and serial numbers.
+## 🚀 Key Features
 
-Work Orders (OT):
+* **Vehicle Management:** Unit registration linked to customers, license plate numbers, make, model, year, and serial numbers.
+* **Work Orders (OT):**
+  * Automatic sequence generation (`OT-XXXXX`).
+  * Workflow tracking for diagnostics, labor, and spare parts used.
+  * Dynamic views in Kanban, List, Form, and Search filter formats.
+* **PDF Reports (QWeb):** Formatted printing for repair quotes and vehicle check-in receipts with custom company letterhead.
+* **Accounting Integration:** Direct connection to sales journals (`sale`) for invoice creation.
 
-Automatic sequence generation (OT-XXXXX).
+## 🛠️ Tech Stack
 
-Workflow tracking for diagnostics, labor, and spare parts used.
+* **ERP:** Odoo 17.0 (Community Edition)
+* **Database:** PostgreSQL 15
+* **Containerization:** Docker & Docker Compose
+* **PDF Engine:** Wkhtmltopdf
+* **Languages:** Python 3.10+, XML, QWeb, JS (OWL Framework)
 
-Dynamic views in Kanban, List, Form, and Search filter formats.
+## 📂 Project Structure
 
-PDF Reports (QWeb): Formatted printing for repair quotes and vehicle check-in receipts with custom company letterhead.
-
-Accounting Integration: Direct connection to sales journals (sale) for invoice creation.
-
-🛠️ Tech Stack
-ERP: Odoo 17.0 (Community Edition)
-
-Database: PostgreSQL 15
-
-Containerization: Docker & Docker Compose
-
-PDF Engine: Wkhtmltopdf
-
-Languages: Python 3.10+, XML, QWeb, JS (OWL Framework)
-
-📂 Project Structure
-Plaintext
+```plaintext
 odoo_taller/
 ├── docker-compose.yml          # Container environment configuration (Odoo + PostgreSQL)
 ├── .gitignore                  # Git exclusions
@@ -41,7 +35,8 @@ odoo_taller/
         ├── models/             # Python data logic
         ├── views/              # XML views (Form, Tree, Kanban, Search)
         └── reports/            # QWeb PDF print templates
-⚙️️ Prerequisites
+
+⚙ Prerequisites
 Ensure you have the following installed on your host machine:
 
 Docker Desktop (or Docker Engine + Docker Compose)
@@ -52,7 +47,7 @@ Git
 Clone the repository:
 
 Bash
-git clone https://github.com/AllenK03/odoo_taller.git
+git clone [https://github.com/AllenK03/odoo_taller.git](https://github.com/AllenK03/odoo_taller.git)
 cd odoo_taller
 Start services with Docker Compose:
 
@@ -67,7 +62,7 @@ Restart the Odoo web service:
 Bash
 docker compose restart web
 Access the application:
-Open your browser and navigate to: http://localhost:8069
+Open your browser and navigate to http://localhost:8069.
 
 ⚙️ Recommended Initial Setup
 When deploying to a new environment for the first time:
