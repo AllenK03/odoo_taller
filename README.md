@@ -35,6 +35,7 @@ odoo_taller/
         ├── models/             # Python data logic
         ├── views/              # XML views (Form, Tree, Kanban, Search)
         └── reports/            # QWeb PDF print templates
+```
 
 ⚙ Prerequisites
 Ensure you have the following installed on your host machine:
